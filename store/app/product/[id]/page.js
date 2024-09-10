@@ -48,7 +48,7 @@ export default async function ProductPage({ params }) {
                 <span className="text-red-600 ml-2">(Out of Stock)</span>
               }
             </p>
-            <button className="bg-amber-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
+            <button className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300">
               Add to Cart
             </button>
           </div>
