@@ -1,5 +1,4 @@
-
-"use client"
+"use client";
 
 import { fetchProductById } from '../../api';
 import { useState } from 'react';
@@ -38,20 +37,38 @@ function ProductDetail({ product }) {
     );
   };
 
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
+  const renderStars = (rating) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+      if (i < rating) {
+        stars.push(<span key={i} className="text-yellow-500">&#9733;</span>); // Filled star
+      } else {
+        stars.push(<span key={i} className="text-gray-400">&#9733;</span>); // Empty star
+      }
+    }
+    return stars;
+  };
+
   return (
     <div className="py-12">
-      <Link
-        href="/"
-        className="text-amber-600 hover:text-amber-800 mb-8 inline-block transition-colors duration-300"
-      >
-        ← Back to Products
-      </Link>
-      <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+      <div className="flex justify-center mb-8">
+        <Link
+          href="/"
+          className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
+        >
+          ←
+        </Link>
+      </div>
+      <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-6xl mx-auto">
         <div className="md:flex">
-          <div className="md:w-1/2 relative">
+          <div className="relative md:w-1/2">
             <img
               src={product.images[currentImageIndex]}
-              className="h-full w-full object-cover"
+              className="w-full object-cover"
             />
             {product.images.length > 1 && (
               <>
@@ -69,6 +86,16 @@ function ProductDetail({ product }) {
                 </button>
               </>
             )}
+            <div className="flex justify-center mt-4 space-x-2">
+              {product.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  className={`h-16 w-16 object-cover cursor-pointer ${currentImageIndex === index ? 'border-2 border-amber-600' : 'border'}`}
+                  onClick={() => handleImageClick(index)}
+                />
+              ))}
+            </div>
           </div>
           <div className="md:w-1/2 p-8">
             <h1 className="text-3xl font-bold mb-4 text-amber-800">
@@ -107,7 +134,30 @@ function ProductDetail({ product }) {
             </button>
           </div>
         </div>
+        <div className="mt-8 p-8">
+          <h2 className="text-2xl font-bold mb-4 text-amber-800">Reviews</h2>
+          {product.reviews && product.reviews.length > 0 ? (
+            <div className="space-y-4">
+              {product.reviews.map((review, index) => (
+                <div key={index} className="p-4 border rounded-lg">
+                  <p className="font-semibold">{review.name || "Anonymous"}</p>
+                  <p className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString()}</p>
+                  <div className="flex items-center mt-2">
+                    {renderStars(review.rating)}
+                  </div>
+                  <p className="mt-2">{review.comment}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-500">No reviews yet.</p>
+          )}
+        </div>
       </div>
     </div>
   );
 }
+
+
+
+
