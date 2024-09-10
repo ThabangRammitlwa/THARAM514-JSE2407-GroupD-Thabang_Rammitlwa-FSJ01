@@ -1,7 +1,21 @@
+"use client"
+
+import {useState ,useEffect} from 'react'
 import Link from 'next/link';
 
 
-export default async function productCard({products}) {
+export default  function productCard({ products }) {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    if (products) {
+      setLoading(false);
+    }
+  }, [products]);
+
+  if (loading) {
+    return <div className="text-center p-4">Loading...</div>;
+  }
 
 
   return (
