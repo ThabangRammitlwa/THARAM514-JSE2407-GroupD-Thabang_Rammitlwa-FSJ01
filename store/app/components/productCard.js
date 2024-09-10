@@ -1,12 +1,8 @@
 import Link from 'next/link';
 
-export default async function Home() {
-  const fetchProducts = async () => {
-    const response = await fetch("https://next-ecommerce-api.vercel.app/products");
-    return response.json();
-  }
 
-  const products = await fetchProducts();
+export default async function productCard({products}) {
+
 
   return (
     <div className="container mx-auto px-4 py-8 bg-amber-50">
