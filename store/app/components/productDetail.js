@@ -95,7 +95,7 @@ export function ProductDetail({ product }) {
                 {product.title}
               </h1>
               <p className="text-2xl font-semibold text-amber-600 mb-4">
-                ${product.price.toFixed(2)}
+                R{product.price.toFixed(2)}
               </p>
               <p className="text-gray-700 mb-6">{product.description}</p>
               <p className="text-sm text-gray-600 mb-2">
@@ -133,7 +133,7 @@ export function ProductDetail({ product }) {
               <div className="space-y-4">
                 {product.reviews.map((review, index) => (
                   <div key={index} className="p-4 border rounded-lg">
-                    <p className="font-semibold">{review.name || "Anonymous"}</p>
+                    <p className="font-semibold">{review.reviewerName || "Anonymous"}</p>
                     <p className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString()}</p>
                     <div className="flex items-center mt-2">
                       {renderStars(review.rating)}
