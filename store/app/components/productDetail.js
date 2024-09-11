@@ -67,13 +67,13 @@ export function ProductDetail({ product }) {
                 <>
                   <button
                     onClick={handlePrevImage}
-                    className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
+                    className="absolute top-1/2 left-0 transform -translate-y-1/2  text-amber-800 p-2 rounded-full hover:bg-amber-500 transition-colors duration-300"
                   >
                     &lt;
                   </button>
                   <button
                     onClick={handleNextImage}
-                    className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-700 text-white p-2 rounded-full hover:bg-gray-800 transition-colors duration-300"
+                    className="absolute top-1/2 right-0 transform -translate-y-1/2  text-amber-800 p-2 rounded-full hover:bg-amber-500 transition-colors duration-300"
                   >
                     &gt;
                   </button>
