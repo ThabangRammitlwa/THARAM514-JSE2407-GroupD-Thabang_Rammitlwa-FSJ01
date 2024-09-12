@@ -1,1 +1,49 @@
 # THARAM514-JSE2407-GroupD-Thabang_Rammitlwa-FSJ01
+
+Welcome to Family Store, an e-commerce web application designed to provide a seamless shopping experience. This project showcases a product listing page with pagination, product detail views, and an interactive image preview feature.
+
+# Key Features
+
+- Product Listing with Pagination: View a list of products with the ability to navigate through multiple pages.
+  
+- Product Detail View: Click on any product to view detailed information, including images, price, category, and ratings.
+
+- Image Preview: Browse through multiple images of each product using intuitive next and previous buttons.
+
+- Error Handling: User-friendly error messages displayed in case of data fetching issues.
+
+- Responsive Design: Optimized for various screen sizes to ensure a consistent user experience.
+
+# Technologies Used
+
+- Next.js: A React framework for server-side rendering and building static web applications.
+
+- React: JavaScript library for building user interfaces
+
+- Tailwind CSS: Utility-first CSS framework for rapid UI development.
+
+
+# installation
+
+1. Clone the repo
+2. Install dependencies [npm install]
+3. Start the development server [cd store
+npm run dev]
+4. open application: http://localhost:3000
+
+# Usage Examples
+
+**Navigating the Product Grid**
+1. **View Products:** 
+   Upon opening the application, you will see a grid of products. Each product card displays the product title, image, price, category, and rating.
+2. **Pagination**
+    Use the "Next" and "Previous" buttons at the bottom of the page to navigate through different pages of products.
+    The page number is displayed between the buttons.
+   
+   **Using the Image Preview Feature**
+   1. **View Product Details:**
+     Click on any product to view its details.
+     In the product detail view, you can browse through multiple images of the product using the "<" (previous) and ">" (next) buttons.
+
+   2. **Return to Product List**
+     Use the browser's back button or modify the URL to return to the product list, maintaining your current page position.
