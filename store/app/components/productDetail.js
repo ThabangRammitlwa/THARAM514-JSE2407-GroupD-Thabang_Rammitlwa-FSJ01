@@ -43,7 +43,7 @@ export function ProductDetail({ product }) {
     };
 
     if (loading) {
-        return <div className='text-centre p-4'>Loading...</div>;
+        return <div className='text-centre p-4'>Loading details...</div>;
     }
   
     return (
