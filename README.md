@@ -46,4 +46,4 @@ npm run dev]
      In the product detail view, you can browse through multiple images of the product using the "<" (previous) and ">" (next) buttons.
 
    2. **Return to Product List**
-     Use the browser's back button or modify the URL to return to the product list, maintaining your current page position.
+     Use the  back button  to return to the product list, maintaining your current page position.
