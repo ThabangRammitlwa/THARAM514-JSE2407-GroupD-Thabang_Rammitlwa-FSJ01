@@ -3,6 +3,14 @@ import { ProductDetail } from '../../components/productDetail';
 import { fetchProductById } from '../../api';
 
 
+/**
+ * 
+ * @param {Object} props 
+ * @param {Object} props.params 
+ * @param {string} props.params.id 
+ * @returns {JSX.Element}
+ */
+
 export default async function ProductPage({ params }) {
   const { id } = params;
   let product;

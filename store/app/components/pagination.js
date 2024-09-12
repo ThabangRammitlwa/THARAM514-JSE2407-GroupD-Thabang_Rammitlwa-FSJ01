@@ -1,5 +1,12 @@
 import Link from 'next/link';
 
+/**
+ *  * @param {Object} props 
+ * @param {number} props.currentPage 
+ * @param {boolean} props.hasMore  
+ * @returns {JSX.Element} 
+ */
+
 export default function Pagination({ currentPage, hasMore }) {
   return (
     <div className="flex justify-center items-center space-x-4 my-12">

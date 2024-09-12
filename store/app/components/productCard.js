@@ -4,6 +4,21 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
+/**
+ * 
+ * * @param {Object} props 
+ * @param {Object[]} props.products 
+ * @param {number} props.currentPage 
+ * @param {Object} props.products[].id 
+ * @param {string} props.products[].title 
+ * @param {number} props.products[].price 
+ * @param {string} props.products[].category 
+ * @param {number} props.products[].rating 
+ * @param {string[]} props.products[].images 
+ * @returns {JSX.Element} 
+ */
+ 
+
 export default function ProductCard({ products,currentPage }) {
   const [loading, setLoading] = useState(true);
   const [currentImages, setCurrentImages] = useState({});
@@ -18,6 +33,13 @@ export default function ProductCard({ products,currentPage }) {
       setCurrentImages(initialImageState);
     }
   }, [products]);
+
+  /**
+   * 
+   * @param {React.MouseEvent} e 
+   * @param {number} productId 
+   * @param {number} direction 
+   */
 
   const changeImage = (e, productId, direction) => {
     e.preventDefault();

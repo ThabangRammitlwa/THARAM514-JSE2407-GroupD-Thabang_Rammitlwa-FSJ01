@@ -3,6 +3,25 @@
 import { useState ,useEffect } from 'react';
 import Link from 'next/link';
 
+/**
+ * 
+ * @param {Object} props 
+ * @param {Object} props.product 
+ * @param {string} props.product.title 
+ * @param {number} props.product.price 
+ * @param {string} props.product.description 
+ * @param {string} props.product.category 
+ * @param {string[]} props.product.tags 
+ * @param {number} props.product.rating 
+ * @param {number} props.product.stock 
+ * @param {string[]} props.product.images 
+ * @param {Object[]} props.product.reviews 
+ * @param {string} props.product.reviews[].reviewerName 
+ * @param {string} props.product.reviews[].date 
+ * @param {number} props.product.reviews[].rating 
+ * @param {string} props.product.reviews[].comment 
+ * @returns {JSX.Element} 
+ */
 
 export function ProductDetail({ product }) {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -14,22 +33,37 @@ export function ProductDetail({ product }) {
         }
     }, [product]);
   
+  /**
+   * Handle previous image navigation.
+   */
+  
     const handlePrevImage = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === 0 ? product.images.length - 1 : prevIndex - 1
       );
     };
   
+  /**
+   * Handle next image navigation.
+   */
     const handleNextImage = () => {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
       );
     };
-  
+  /**
+   * Handle image click to set current image
+   * @param {number} index 
+   */
     const handleImageClick = (index) => {
       setCurrentImageIndex(index);
     };
   
+  /**
+   * Render star ratings
+   * @param {number} rating 
+   * @returns {JSX.Element}
+   */
     const renderStars = (rating) => {
       const stars = [];
       for (let i = 0; i < 5; i++) {

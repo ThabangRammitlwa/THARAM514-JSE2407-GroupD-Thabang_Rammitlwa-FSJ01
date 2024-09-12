@@ -2,6 +2,14 @@ import Products from './components/productCard'
 import Pagination from './components/pagination'
 import { fetchProducts } from './api'
 
+/**
+ * 
+  * @param {Object} props 
+ * @param {Object} props.searchParams 
+ * @param {string} [props.searchParams.page] 
+ * @returns {JSX.Element}
+ */
+
 export default async function Home({ searchParams }) {
   const page = Number(searchParams.page) || 1;
   let products;
