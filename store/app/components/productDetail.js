@@ -1,7 +1,12 @@
 "use client"
 
+function goBack() {
+  window.history.back();
+}
+
+
 import { useState ,useEffect } from 'react';
-import Link from 'next/link';
+
 
 /**
  * 
@@ -83,12 +88,12 @@ export function ProductDetail({ product }) {
     return (
       <div className="py-12">
         <div className="flex justify-center mb-8">
-          <Link
-            href="/"
+          <button
+            onClick={goBack}
             className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
           >
-            ←
-          </Link>
+            Back to list ←
+          </button>
         </div>
         <div className="bg-white rounded-lg shadow-lg overflow-hidden max-w-6xl mx-auto">
           <div className="md:flex">
