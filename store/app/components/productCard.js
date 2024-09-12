@@ -35,16 +35,16 @@ export default function ProductCard({ products,currentPage }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 bg-white">
+    <div className="container mx-auto px-2 sm:px-4 py-4 sm: py-8 bg-white">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {products && products.map((item, index) => (
           <Link key={index} href={`/product/${item.id}?page={currentPage}`}>
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
+            <div className="bg-white shadow-md rounded-lg overflow-hidden flex flex-col h-[300px] sm:h-[350px] md:h-[400px]">
               <div className="p-4">
                 <h2 className="text-xl font-semibold text-amber-900 mb-2">{item.title}</h2>
-                <div className="relative aspect-w-1 aspect-h-1">
+                <div className="relative aspect-w-1 aspect-h-1 h-32 sm:h-40 md:h-48">
                   <img
-                    src={item.images [currentImages[item.id]]} className="h-48 object-cover px-20 " 
+                    src={item.images [currentImages[item.id]]} className="h-full object-contain w-full " 
                     alt={`${item.title} - Image ${currentImages[item.id] + 1}`}
                   />
                   {item.images.length > 1 && (
